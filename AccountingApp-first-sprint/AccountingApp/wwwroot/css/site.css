@@ -24,6 +24,10 @@ a {
   border-color: #1861ac;
 }
 
+.brand-img {
+  height: 100%;
+  width: 20%;
+}
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
