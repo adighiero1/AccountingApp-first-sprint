@@ -1,8 +1,26 @@
-﻿
+﻿@model IEnumerable<Microsoft.AspNetCore.Identity.IdentityUser>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>This is Admin Page</h1>
-
+<h1>Admin Page</h1>
+<h4>List of Users</h4>
+<a asp-action="CreateUser">Create User</a>
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>Name</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var User in Model)
+        {
+            <tr>
+                <td>@User.Id</td> 
+                <td>@User.UserName</td>
+            </tr>
+        }
+    </tbody>
+</table>

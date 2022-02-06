@@ -21,9 +21,11 @@ namespace AccountingApp.Controllers
 
         //displays the initial admin webpage if you are an admin. 
         //uncomment this line for admin authorization [Authorize(Roles = "Admin")]
+        [HttpGet]
         public IActionResult Index()
         {
-            return View();
+            var users = _userManager.Users;
+            return View(users);
         }
 
         //
@@ -37,5 +39,7 @@ namespace AccountingApp.Controllers
             await _userManager.CreateAsync(user);
             return RedirectToAction("Index");
         }
+
+
     }
 }
