@@ -58,6 +58,10 @@ namespace RoleBaseAuth.Areas.Identity.Pages.Account
             [DataType(DataType.Password)]
             [Display(Name = "Password")]
             public string Password { get; set; }
+            public string DOB;
+            public string address;
+            public string first_name;
+            public string last_name;
 
             [DataType(DataType.Password)]
             [Display(Name = "Confirm password")]
