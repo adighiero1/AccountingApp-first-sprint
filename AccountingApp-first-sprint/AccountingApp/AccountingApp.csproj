@@ -6,6 +6,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\images\Logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
     <None Update="app.db" CopyToOutputDirectory="PreserveNewest" ExcludeFromSingleFile="true" />
   </ItemGroup>
 
@@ -18,7 +21,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Images\Logo\" />
+    <Content Remove="wwwroot\images\" />
+    <Content Remove="wwwroot\images\Logo.jpg" />
   </ItemGroup>
-
+  <ItemGroup>
+    <Folder Include="wwwroot\images\" />
+  </ItemGroup>
 </Project>
