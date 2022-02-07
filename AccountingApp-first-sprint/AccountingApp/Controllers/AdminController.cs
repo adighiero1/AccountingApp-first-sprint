@@ -38,7 +38,28 @@ namespace AccountingApp.Controllers
         {
             await _userManager.CreateAsync(user);
             return RedirectToAction("Index");
+
+            //IdentityResult result = await _userManager.CreateAsync(user);
+
+            //if (result.Succeeded)
+            //{
+            //    return RedirectToAction("Index");
+            //}
+            //else
+            //{
+            //    foreach (IdentityError error in result.Errors)
+            //        ModelState.AddModelError("", error.Description);
+            //}
+
         }
+
+
+
+        //[HttpPut]
+        //public async Task<IActionResult> Deactivate(IdentityUser user)
+        //{
+        //    await _userManager.
+        //}
 
 
     }
