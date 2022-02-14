@@ -20,7 +20,7 @@ namespace AccountingApp.Controllers
 
 
         //displays the initial admin webpage if you are an admin. 
-        //uncomment this line for admin authorization [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public IActionResult Index()
         {
@@ -29,14 +29,14 @@ namespace AccountingApp.Controllers
         }
 
         //
-        public IActionResult Create()
+        public IActionResult CreateUser()
         {
-            return View(new IdentityUser());
+            return View("CreateUser");
         }
         [HttpPost]
-        public async Task<IActionResult> Create(IdentityUser user)
+        public async Task<IActionResult> CreateUser(IdentityUser user,string password)
         {
-            await _userManager.CreateAsync(user);
+            await _userManager.CreateAsync(user, password);
             return RedirectToAction("Index");
 
             //IdentityResult result = await _userManager.CreateAsync(user);

@@ -6,7 +6,8 @@
 
 <h1>Admin Page</h1>
 <h4>List of Users</h4>
-@*<a asp-action="CreateUser">Create User</a>*@
+@*<a asp-action="CreateUser">Create User 2?</a>*@
+<a href="@Url.Action("CreateUser", "Admin")" class="navbar-brand">Create User</a>
 
 <table class="table table-striped table-bordered">
     <thead>
@@ -20,7 +21,9 @@
         {
             <tr>
                 <td>@User.Id</td> 
-                <td>@User.UserName</td>
+@*                <td>@User.UserName</td>*@
+                <td>@User.Email</td>
+                
 @*                 Use this to deactivate users once we figure this out.
                 <a asp-action="Deactivate">Deactivate</a>*@
             </tr>

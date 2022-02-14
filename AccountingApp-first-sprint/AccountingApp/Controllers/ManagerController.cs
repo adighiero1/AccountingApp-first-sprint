@@ -9,7 +9,7 @@ namespace AccountingApp.Controllers
 {
     public class ManagerController : Controller
     {
-        [Authorize(Roles="Manager")]
+        [Authorize(Roles="Admin, Manager")]
         public IActionResult Index()
         {
             return View();
